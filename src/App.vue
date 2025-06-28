@@ -65,16 +65,12 @@ const handleLogout = () => {
 };
 
 onMounted(() => {
-    // ELIMINA ESTA LÍNEA QUE CAUSA EL ERROR:
-    // authStore.loadFromLocalStorage(); // <-- ¡Esta línea debe desaparecer!
-
     // Importa Bootstrap y el componente Dropdown
     import('bootstrap/dist/js/bootstrap.bundle.min.js')
         .then(bootstrap => {
             // Asegúrate de que el elemento exista antes de intentar inicializarlo
             const dropdownElement = document.getElementById('navbarDropdown');
             if (dropdownElement) {
-                // eslint-disable-next-line no-new
                 new bootstrap.Dropdown(dropdownElement);
             }
         })
@@ -83,8 +79,7 @@ onMounted(() => {
 </script>
 
 <style>
-/* Estilos globales si los tienes */
 body {
-    padding-bottom: 60px; /* Para asegurar que el footer no tape contenido */
+    padding-bottom: 60px;
 }
 </style>

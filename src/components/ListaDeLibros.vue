@@ -91,7 +91,7 @@ export default {
         }
     },
     watch: {
-        // Observar cambios en el límite (útil si se usa el mismo componente en varios lugares)
+        
         limit: {
             immediate: true,
             handler: 'fetchLibros'
@@ -102,7 +102,7 @@ export default {
 
 <style scoped>
 .card-img-top {
-    height: 250px; /* Altura fija para las portadas */
+    height: 250px;
     object-fit: cover;
     border-top-left-radius: calc(0.25rem - 1px);
     border-top-right-radius: calc(0.25rem - 1px);

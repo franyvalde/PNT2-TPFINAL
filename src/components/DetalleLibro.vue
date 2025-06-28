@@ -50,7 +50,7 @@ export default {
             this.libro = await libroService.getLibroDetails(this.id);
         } catch (error) {
             console.error('Error al cargar los detalles del libro:', error);
-            // Podrías redirigir a una página de error o mostrar un mensaje al usuario
+            
         }
     },
 };
@@ -59,7 +59,7 @@ export default {
 <style scoped>
 .no-cover-detail {
     width: 100%;
-    height: 400px; /* Ajusta según sea necesario */
+    height: 400px; 
     background-color: #e9ecef;
     color: #6c757d;
     font-weight: bold;

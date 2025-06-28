@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import axios from 'axios';
 
-const MOCKAPI_BASE_URL = 'https://6860314fc55df67558a061ca.mockapi.io/users'; // TU URL DE MOCKAPI
+const MOCKAPI_BASE_URL = 'https://6860314fc55df67558a061ca.mockapi.io/users';
 
 export const useAuthStore = defineStore('auth', {
     state: () => ({

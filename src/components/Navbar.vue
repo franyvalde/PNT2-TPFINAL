@@ -99,11 +99,11 @@
 
         </ul>
 
-        <form class="d-flex" role="search" @submit.prevent="buscarPeliculas">
+        <form class="d-flex" role="search" @submit.prevent="buscarLibros">
 
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" v-model="searchQuery" @keyup.enter="buscarPeliculas">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" v-model="searchQuery" @keyup.enter="buscarLibros">
 
-          <button class="btn btn-primary" type="button" @click="buscarPeliculas">Buscar</button>
+          <button class="btn btn-primary" type="button" @click="buscarLibros">Buscar</button>
 
         </form>
 
@@ -138,9 +138,9 @@ const dashboard = () => {
 
 const searchQuery = ref('');
 
-const buscarPeliculas = () => {
+const buscarLibros = () => {
 if (searchQuery.value.trim()) {
-  router.push({ path: '/BuscarPeliculas', query: { q: searchQuery.value } });
+  router.push({ path: '/BuscarLibros', query: { q: searchQuery.value } });
 }
 
 };
