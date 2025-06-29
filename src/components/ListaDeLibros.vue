@@ -55,7 +55,7 @@ export default {
     props: {
         limit: {
             type: Number,
-            default: 0 // 0 significa sin límite
+            default: 0 
         }
     },
     data() {
@@ -73,7 +73,7 @@ export default {
             try {
                 const allLibros = await libroService.getLibros();
                 this.libros = this.limit > 0 ? allLibros.slice(0, this.limit) : allLibros;
-                this.filterLibros(); // Aplica el filtro inicial
+                this.filterLibros(); 
             } catch (error) {
                 console.error('Error al cargar los libros:', error);
             }

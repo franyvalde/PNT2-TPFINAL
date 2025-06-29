@@ -37,7 +37,7 @@ import libroService from '../services/libroService';
 
 export default {
     name: 'DetalleLibro',
-    props: ['id'], // Recibe el ID del libro de la ruta
+    props: ['id'], 
 
     data() {
         return {

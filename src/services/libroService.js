@@ -1,7 +1,6 @@
-// src/services/libroService.js
 import axios from 'axios';
 
-const MOCKAPI_BASE_URL = 'https://686055ae8e748640844302d8.mockapi.io/libros'; // Asegúrate de que esta URL sea CORRECTA
+const MOCKAPI_BASE_URL = 'https://686055ae8e748640844302d8.mockapi.io/libros'; 
 
 const libroService = {
     async getLibros() {
@@ -24,7 +23,6 @@ const libroService = {
         }
     },
 
-    // ¡NUEVA FUNCIÓN: createLibro!
     async createLibro(libroData) {
         try {
             console.log('Enviando datos del nuevo libro a MockAPI:', libroData);
@@ -37,7 +35,6 @@ const libroService = {
         }
     },
 
-    // Puedes añadir funciones para actualizar y eliminar si las necesitas más adelante
     async updateLibro(id, libroData) {
         try {
             console.log(`Actualizando libro ${id} con datos:`, libroData);

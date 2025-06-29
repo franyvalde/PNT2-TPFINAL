@@ -20,7 +20,7 @@
         background-color: #23272b;
         padding: 10px 0;
         border-top: 1px solid #495057;
-        color: #ffffff; /* Asegura que el texto sea visible */
+        color: #ffffff; 
     }
 
     .footer p {
