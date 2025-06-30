@@ -73,8 +73,8 @@ http://localhost:5173
 - **Permisos:** Ver y descargar libros
 
 ### Usuario Administrador
-- **Email:** admin@biblioteca.com
-- **Contraseña:** admin123
+- **Email:** admin
+- **Contraseña:** admin
 - **Permisos:** Todos los permisos + gestión de libros
 
 ## 🏗️ Estructura del Proyecto
@@ -157,9 +157,8 @@ npm run preview
 
 Aixa Naya
 Carlos Arteaga
-Fran
-Ale
-
+Franco Valderrama
+Alejo madama
 
 
 ## 🙏 Agradecimientos
