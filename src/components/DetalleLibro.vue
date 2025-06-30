@@ -3,9 +3,9 @@
         <div v-if="libro" class="row">
             <div class="col-md-4">
                 <img
-                    v-if="libro.portadaURL"
-                    :src="libro.portadaURL"
-                    :alt="libro.titulo"
+                    v-if="libro.coverURL"
+                    :src="libro.coverURL"
+                    :alt="libro.name"
                     class="img-fluid rounded shadow"
                 />
                 <div v-else class="no-cover-detail d-flex align-items-center justify-content-center rounded shadow">
@@ -13,12 +13,12 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <h1 class="mb-4">{{ libro.titulo }}</h1>
-                <p class="lead"><strong>Autor:</strong> {{ libro.autor }}</p>
-                <p>{{ libro.descripcion || 'Sin descripción disponible.' }}</p>
+                <h1 class="mb-4">{{ libro.name }}</h1>
+                <p class="lead"><strong>Autor:</strong> {{ libro.author }}</p>
+                <p>{{ libro.desc || 'Sin descripción disponible.' }}</p>
 
                 <div class="d-grid gap-2">
-                    <a :href="libro.urlPDF" target="_blank" class="btn btn-success btn-lg">
+                    <a :href="libro.pdfURL" target="_blank" class="btn btn-success btn-lg">
                         <i class="fas fa-download me-2"></i> Descargar PDF
                     </a>
                 </div>
@@ -50,7 +50,6 @@ export default {
             this.libro = await libroService.getLibroDetails(this.id);
         } catch (error) {
             console.error('Error al cargar los detalles del libro:', error);
-            
         }
     },
 };

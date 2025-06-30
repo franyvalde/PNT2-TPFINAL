@@ -5,25 +5,13 @@
       <form @submit.prevent="handleLogin">
         <div class="mb-3">
           <label for="username" class="form-label">Usuario</label>
-          <input
-            v-model="username"
-            type="text"
-            id="username"
-            class="form-control"
-            placeholder="Ingrese su usuario"
-            required
-          />
+          <input v-model="username" type="text" id="username" class="form-control" placeholder="Ingrese su usuario"
+            required />
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Contraseña</label>
-          <input
-            v-model="password"
-            type="password"
-            id="password"
-            class="form-control"
-            placeholder="Ingrese su contraseña"
-            required
-          />
+          <input v-model="password" type="password" id="password" class="form-control"
+            placeholder="Ingrese su contraseña" required />
         </div>
         <button type="submit" class="btn btn-primary w-100">Ingresar</button>
         <p v-if="error" class="text-danger mt-2 text-center">{{ error }}</p>

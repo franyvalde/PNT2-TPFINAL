@@ -2,60 +2,34 @@
   <div class="container my-4">
     <h2>Registro</h2>
     <form @submit.prevent="handleRegister">
-      
+
       <div class="mb-3">
         <label for="name" class="form-label">Nombre</label>
-        <input 
-          type="text" 
-          v-model="name" 
-          id="name" 
-          class="form-control"
-          placeholder="Nombre" 
-          required 
-        />
+        <input type="text" v-model="name" id="name" class="form-control" placeholder="Nombre" required />
       </div>
       <div class="mb-3">
         <label for="lastName" class="form-label">Apellido</label>
-        <input 
-          type="text" 
-          v-model="lastName" 
-          id="lastName" 
-          class="form-control"
-          placeholder="Apellido" 
-          required 
-        />
+        <input type="text" v-model="lastName" id="lastName" class="form-control" placeholder="Apellido" required />
       </div>
       <div class="mb-3">
         <label for="username" class="form-label">Username (Email)</label>
-        <input 
-          type="email" 
-          v-model="username" 
-          id="username" 
-          class="form-control"
-          placeholder="tu.usuario@ejemplo.com" 
-          required 
-        />
+        <input type="email" v-model="username" id="username" class="form-control" placeholder="tu.usuario@ejemplo.com"
+          required />
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input 
-          type="password" 
-          v-model="password" 
-          id="password" 
-          class="form-control" 
-          placeholder="Contraseña" 
-          required 
-        />
+        <input type="password" v-model="password" id="password" class="form-control" placeholder="Contraseña"
+          required />
       </div>
       <button type="submit" class="btn btn-primary">Registrarse</button>
-      <p class="mt-3">Si ya estás registrado, <router-link to="/login">haz click aquí</router-link></p> 
+      <p class="mt-3">Si ya estás registrado, <router-link to="/login">haz click aquí</router-link></p>
     </form>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import { useAuthStore } from '../store/auth.js'; 
+import { useAuthStore } from '../store/auth.js';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 
@@ -67,23 +41,23 @@ const password = ref('');
 const name = ref('');
 const lastName = ref('');
 
-const MOCKAPI_USERS_URL = 'https://6720f79198bbb4d93ca6e2b7.mockapi.io/user/users'; 
+const MOCKAPI_USERS_URL = 'https://6860314fc55df67558a061ca.mockapi.io/users/users';
 
 const handleRegister = async () => {
   try {
     const response = await axios.post(MOCKAPI_USERS_URL, {
       username: username.value,
-      password: password.value, 
+      password: password.value,
       name: name.value,
       lastName: lastName.value,
-      role: 'user' 
+      role: 'user'
     });
 
     if (response.status === 201) {
       console.log('Usuario registrado en MockAPI:', response.data);
-      alert('¡Registro exitoso! Ahora puedes iniciar sesión con tu nuevo usuario.'); 
+      alert('¡Registro exitoso! Ahora puedes iniciar sesión con tu nuevo usuario.');
 
-      router.push('/login'); 
+      router.push('/login');
     } else {
       console.error('Error al registrar usuario - Código de estado:', response.status, response.data);
       alert(`Error al registrar. Código: ${response.status}. Mensaje: ${response.data.message || 'Inténtalo de nuevo.'}`);

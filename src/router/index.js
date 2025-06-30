@@ -10,7 +10,6 @@ import ListaDeLibros from '../components/ListaDeLibros.vue';
 import DetalleLibro from '../components/DetalleLibro.vue';
 import SubirLibro from '../components/SubirLibro.vue';
 
-
 const routes = [
     {
         path: '/',
@@ -65,11 +64,18 @@ const router = createRouter({
 // Guardia de navegación para proteger rutas
 router.beforeEach((to, from, next) => {
     const authStore = useAuthStore();
+    console.log('Navegando a:', to.path);
+    console.log('Usuario actual:', authStore.user);
+    console.log('RoleAdmin:', authStore.user?.RoleAdmin);
+    
     if (to.meta.requiresAuth && !authStore.isAuthenticated) {
+        console.log('No autenticado, redirigiendo a login');
         next('/login'); // Redirige a login si no está autenticado
     } else if (to.meta.requiresAdmin && authStore.user?.role !== 'admin') {
+        console.log('No es admin, redirigiendo a home');
         next('/'); // Redirige a home si no es admin
     } else {
+        console.log('Acceso permitido');
         next();
     }
 });

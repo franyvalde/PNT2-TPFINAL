@@ -21,18 +21,18 @@
             >
                 <div class="card shadow-sm w-100">
                     <img
-                        v-if="libro.portadaURL"
-                        :src="libro.portadaURL"
-                        :alt="libro.titulo"
+                        v-if="libro.coverURL"
+                        :src="libro.coverURL"
+                        :alt="libro.name"
                         class="card-img-top book-cover"
                     />
                     <div v-else class="card-img-top no-cover d-flex align-items-center justify-content-center">
                         <span>Sin Portada</span>
                     </div>
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">{{ libro.titulo }}</h5>
-                        <p class="card-text text-muted">Autor: {{ libro.autor }}</p>
-                        <p class="card-text">{{ libro.descripcion ? libro.descripcion.slice(0, 100) + '...' : 'Descripción no disponible' }}</p>
+                        <h5 class="card-title">{{ libro.name }}</h5>
+                        <p class="card-text text-muted">Autor: {{ libro.author }}</p>
+                        <p class="card-text">{{ libro.desc ? libro.desc.slice(0, 100) + '...' : 'Descripción no disponible' }}</p>
                         <router-link
                             class="btn btn-primary mt-auto"
                             :to="`/libros/${libro.id}`"
@@ -84,14 +84,13 @@ export default {
             } else {
                 const query = this.searchQuery.toLowerCase();
                 this.filteredLibros = this.libros.filter(libro =>
-                    libro.titulo.toLowerCase().includes(query) ||
-                    libro.autor.toLowerCase().includes(query)
+                    libro.name.toLowerCase().includes(query) ||
+                    libro.author.toLowerCase().includes(query)
                 );
             }
         }
     },
     watch: {
-        
         limit: {
             immediate: true,
             handler: 'fetchLibros'
