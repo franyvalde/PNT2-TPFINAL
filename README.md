@@ -155,11 +155,10 @@ npm run preview
 
 ## 👥 Autores
 
-Aixa Naya
-Carlos Arteaga
-Franco Valderrama
-Alejo madama
-
+- Aixa Naya
+- Alejo Madama
+- Franco Valderrama
+- Carlos Arteaga
 
 ## 🙏 Agradecimientos
 
